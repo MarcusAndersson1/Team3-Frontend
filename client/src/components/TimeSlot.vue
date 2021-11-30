@@ -12,10 +12,10 @@ export default {
   name: 'slot-item',
   props: ['slot'],
   methods: {
-    handleFocus (_id) {
+    handleFocus(_id) {
       this.$emit('expand-slot', _id)
     },
-    handleFocusOut () {
+    handleFocusOut() {
       // do something here
     }
   }

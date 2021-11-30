@@ -18,7 +18,7 @@ export default {
   components: { TimeSlot },
   name: 'TimeView',
 
-  mounted () {
+  mounted() {
     let slot1 = { address: 'peepee town', dentist: 'pedro', time: '11:27' }
     let slot2 = { address: 'peepee town', dentist: 'pedro', time: '11:29' }
     let slots1 = []
@@ -27,7 +27,7 @@ export default {
     this.slots = slots1
     console.log('aaa')
   },
-  data () {
+  data() {
     return {
       slots: [],
       msg: 'Welcome o Your Vue.js App'

@@ -1,13 +1,14 @@
-// https://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
-  env: {
-    node: true
-  },
   extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
+    'standard',
+    'plugin:vue/essential'
+  ],
+  parserOptions: {
+    sourceType: 'module',
+  },
+  plugins: [
+    'vue'
   ],
   rules: {
         // allow async-await
