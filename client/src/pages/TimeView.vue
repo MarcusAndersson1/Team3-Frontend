@@ -8,11 +8,13 @@
         v-on:del-slot="deleteslot"
       />
     </b-list-group>
+    <b-button v-on:click='testApi'>Test api connection</b-button>
   </div>
 </template>
 
 <script>
 import TimeSlot from '../components/TimeSlot.vue'
+import { Api } from '@/Api'
 
 export default {
   components: { TimeSlot },
@@ -31,6 +33,13 @@ export default {
     return {
       slots: [],
       msg: 'Welcome o Your Vue.js App'
+    }
+  },
+  methods: {
+    testApi() {
+      Api.post('/test', {}).then((response) => {
+        console.log(response)
+      })
     }
   }
 }
