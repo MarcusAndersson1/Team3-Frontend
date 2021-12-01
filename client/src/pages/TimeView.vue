@@ -1,8 +1,8 @@
 <template>
   <div>
     <p>Available Times</p>
-    <b-list-group id="list" v-for="slot in slots" v-bind:key="slot.name">
-      <time-slot
+    <b-list-group v-for="slot in slots" v-bind:key="slot.name">
+      <time-slot id="list"
         v-on:expand-slot="expandSlot"
         v-bind:slot="slot"
         v-on:del-slot="deleteslot"
@@ -47,4 +47,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#list {
+  display: inline-grid;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 1%
+}
 </style>
