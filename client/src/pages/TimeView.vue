@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>AAAAAAAAA</p>
+    <p>Available Times</p>
     <b-list-group id="list" v-for="slot in slots" v-bind:key="slot.name">
       <time-slot
         v-on:expand-slot="expandSlot"
@@ -21,8 +21,8 @@ export default {
   name: 'TimeView',
 
   mounted() {
-    let slot1 = { address: 'peepee town', dentist: 'pedro', time: '11:27' }
-    let slot2 = { address: 'peepee town', dentist: 'pedro', time: '11:29' }
+    let slot1 = { address: 'Långströmsgatan 2A', dentist: 'Pedro Borra', time: '11:27' }
+    let slot2 = { address: 'Åvägen 22', dentist: 'Micke Borra', time: '11:29' }
     let slots1 = []
     slots1.push(slot1)
     slots1.push(slot2)
