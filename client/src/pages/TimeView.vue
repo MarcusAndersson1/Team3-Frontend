@@ -1,7 +1,8 @@
 <template>
-  <div class="map">
-    <DentistMap></DentistMap>
-    <p>Available Times</p>
+  <div class>
+    <dentist-map id = "map" />
+    <div id = "listContainer">
+    <br/>
     <b-list-group v-for="slot in slots" v-bind:key="slot.name">
       <time-slot id="list"
         v-on:expand-slot="expandSlot"
@@ -9,6 +10,7 @@
         v-on:del-slot="deleteslot"
       />
     </b-list-group>
+    </div>
     <b-button v-on:click='testApi'>Test api connection</b-button>
   </div>
 </template>
@@ -54,5 +56,9 @@ export default {
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 1%
+}
+.map {
+  width: 100%;
+  height: 20px;
 }
 </style>
