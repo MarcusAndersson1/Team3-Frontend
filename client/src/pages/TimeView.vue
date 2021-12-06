@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="map">
+    <DentistMap></DentistMap>
     <p>Available Times</p>
     <b-list-group v-for="slot in slots" v-bind:key="slot.name">
       <time-slot id="list"
@@ -13,11 +14,12 @@
 </template>
 
 <script>
+import DentistMap from '@/components/DentistMap'
 import TimeSlot from '../components/TimeSlot.vue'
 import { Api } from '@/Api'
 
 export default {
-  components: { TimeSlot },
+  components: { TimeSlot, DentistMap },
   name: 'TimeView',
 
   mounted() {

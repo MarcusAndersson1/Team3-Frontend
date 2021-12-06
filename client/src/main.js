@@ -9,6 +9,9 @@ import { BootstrapVue } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// map shit
+import 'leaflet/dist/leaflet.css'
+
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 
