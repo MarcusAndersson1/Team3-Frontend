@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <p>Available Times</p>
-    <b-list-group id="list" v-for="slot in slots" v-bind:key="slot.name">
-      <time-slot
+  <div class>
+    <dentist-map id = "map" />
+    <div id = "listContainer">
+    <br/>
+    <b-list-group v-for="slot in slots" v-bind:key="slot.name">
+      <time-slot id="list"
         v-on:expand-slot="expandSlot"
         v-bind:slot="slot"
         v-on:del-slot="deleteslot"
       />
     </b-list-group>
+    </div>
     <b-button v-on:click='testApi'>Test api connection</b-button>
   </div>
 </template>
 
 <script>
+import DentistMap from '@/components/DentistMap'
 import TimeSlot from '../components/TimeSlot.vue'
 import { Api } from '@/Api'
 
 export default {
-  components: { TimeSlot },
+  components: { TimeSlot, DentistMap },
   name: 'TimeView',
 
   mounted() {
@@ -47,4 +51,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#list {
+  display: inline-grid;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 1%
+}
+.map {
+  width: 100%;
+  height: 20px;
+}
 </style>
