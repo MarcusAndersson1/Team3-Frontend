@@ -1,21 +1,29 @@
 <template>
   <div>
-    <h1>Login</h1>
-    <form>
-      <input
+    <br>
+    <br>
+    <br>
+    <b-img id="img" :src="require('../assets/teeth.png')"></b-img>
+    <br><br>
+    <h1 id="header">Oral Fixation</h1>
+    <br>
+    <br>
+    <form id="inputBar">
+      <b-form-input
         v-model="email"
         type="email"
-        placeholder="Enter a valid email address"
+        placeholder="Email address"
       />
-      <label>Email address</label>
-      <p>Email is: {{ email }}</p>
+      <br>
+      <label></label>
+      <!-- <p>Email is: {{ email }}</p> -->
 
       <br />
-      <input v-model="password" type="password" placeholder="Enter password" />
-      <label>Password</label>
+      <b-form-input v-model="password" type="password" placeholder="Password" />
+      <label></label>
       <br>
-      <button v-on:click="login" type="button">Login</button>
-      <button v-on:click="test" type="button">Test</button>
+      <!-- <b-button id="btn" v-on:click="test" type="button" size="lg">Test</b-button> -->
+      <b-button id="btn" variant="primary" v-on:click="login" type="button" size="lg">Login</b-button>
 
     </form>
   </div>
@@ -59,4 +67,18 @@ export default {
 </script>
 
 <style scoped>
+#header {
+  color: white;
+}
+#img {
+  width: 30%;
+}
+#inputBar {
+  margin-right: 30%;
+  margin-left: 30%;
+}
+#btn {
+  width: 50%;
+
+}
 </style>
