@@ -7,18 +7,13 @@
     <br><br>
     <h1 id="header">Oral Fixation</h1>
     <br>
-    <br>
     <form id="inputBar">
       <b-form-input
         v-model="email"
         type="email"
-        placeholder="Email address"
-      />
-      <br>
-      <label></label>
+        placeholder="Email address"/>
+        <br>
       <!-- <p>Email is: {{ email }}</p> -->
-
-      <br />
       <b-form-input v-model="password" type="password" placeholder="Password" />
       <label></label>
       <br>
@@ -71,14 +66,15 @@ export default {
   color: white;
 }
 #img {
-  width: 30%;
+  width: 40%;
 }
 #inputBar {
-  margin-right: 30%;
-  margin-left: 30%;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 2%;
 }
 #btn {
-  width: 50%;
+  width: 60%;
 
 }
 </style>
