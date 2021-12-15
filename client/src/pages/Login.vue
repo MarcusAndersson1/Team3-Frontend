@@ -3,9 +3,8 @@
     <br>
     <br>
     <br>
-    <b-img id="img" :src="require('../assets/teeth.png')"></b-img>
+    <b-img id="img" :src="require('../assets/Oral Fixation.png')"></b-img>
     <br><br>
-    <h1 id="header">Oral Fixation</h1>
     <br>
     <form id="inputBar">
       <b-form-input v-model="email" type="email" placeholder="Email address"/>
@@ -63,7 +62,7 @@ export default {
   color: white;
 }
 #img {
-  width: 40%;
+  width: 70%;
 }
 #inputBar {
   margin-right: 10%;
