@@ -8,17 +8,14 @@
     <h1 id="header">Oral Fixation</h1>
     <br>
     <form id="inputBar">
-      <b-form-input
-        v-model="email"
-        type="email"
-        placeholder="Email address"/>
+      <b-form-input v-model="email" type="email" placeholder="Email address"/>
         <br>
       <!-- <p>Email is: {{ email }}</p> -->
       <b-form-input v-model="password" type="password" placeholder="Password" />
       <label></label>
       <br>
       <!-- <b-button id="btn" v-on:click="test" type="button" size="lg">Test</b-button> -->
-      <b-button id="btn" variant="primary" v-on:click="login" type="button" size="lg">Login</b-button>
+      <b-button id="btn" variant="outline-light" v-on:click="login" type="button" size="lg">Login</b-button>
 
     </form>
   </div>
@@ -75,6 +72,7 @@ export default {
 }
 #btn {
   width: 60%;
+  color: white;
 
 }
 </style>
