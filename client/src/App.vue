@@ -24,12 +24,15 @@ html, body {
 }
 
 body {
-    background: linear-gradient(-37deg, hsl(234, 44%, 62%), #a9cbff, #d9a4ff, #ff70b8);
+  background-image: url('https://media.gq.com/photos/59270d4b7a71154410c462f3/');
+      background-size: 100% 100%;
+
+    /*background: linear-gradient(-37deg, hsl(234, 44%, 62%), #a9cbff, #d9a4ff, #ff70b8);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;*/
 }
 
-@keyframes gradient {
+/*@keyframes gradient {
     0% {
         background-position: 0% 50%;
     }
@@ -39,5 +42,5 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
+}*/
 </style>
