@@ -14,7 +14,7 @@
       <label></label>
       <br>
       <!-- <b-button id="btn" v-on:click="test" type="button" size="lg">Test</b-button> -->
-      <b-button id="btn" variant="primary" v-on:click="login" type="button" size="lg">Login</b-button>
+      <b-button id="btn" variant="outline-light" v-on:click="login" type="button" size="lg">Login</b-button>
       <br>
       <a href='/#/signup'>Sign up here!</a>
 
