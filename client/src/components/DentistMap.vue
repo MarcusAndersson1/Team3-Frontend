@@ -1,6 +1,6 @@
 <template>
   <div id="mapContainer" style="height: 500px">
-    <div class="col d-flex justify-content-center">
+    <div class="col d-flex justify-content-left">
     <dentist-card id="card" v-if="showCard"></dentist-card></div>
     <l-map :zoom="zoom" :center="center" ref="map" id="map" style="width: 100%">
       <l-marker :lat-lng="coordinates" @click="clickFunction()">
@@ -56,14 +56,15 @@ export default {
 </script>
 <style scoped>
 #map{
-    height: 100%;
+    height: 157%;
     z-index: 8;
 }
 #card{
   position: absolute;
   z-index: 9;
-  top: 40%;
-  align-items: center;
+  bottom: 0%;
+  margin-left: 1%;
+  align-items: left;
 
 }
 </style>

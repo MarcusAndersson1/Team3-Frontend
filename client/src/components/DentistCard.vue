@@ -13,20 +13,28 @@
       Some quick example text to build on the card title and make up the bulk of the card's content.
     </b-card-text>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
+    <b-button href="#" variant="primary" v-on:click="dentist">Book a time</b-button>
   </b-card>
 </div>
 </template>
 <script>
+import TimeSlot from '../components/TimeSlot.vue'
+import { Api } from '@/Api'
 
 export default ({
+  components: { TimeSlot, Api },
   name: 'dentist-card',
   props: {
     clinic: {},
     name: {
       type: String
     }
+  },
+  methods: {
+    dentist() {
+      window.location = '/#/dentistpage'
+    }
   }
-
 })
+
 </script>
