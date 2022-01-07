@@ -17,11 +17,12 @@
 
 <script>
 import DentistMap from '@/components/DentistMap'
+import DentistCard from '@/components/DentistCard'
 import TimeSlot from '../components/TimeSlot.vue'
 import { Api } from '@/Api'
 
 export default {
-  components: { TimeSlot, DentistMap },
+  components: { TimeSlot, DentistMap, DentistCard },
   name: 'TimeView',
 
   mounted() {
