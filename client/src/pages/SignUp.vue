@@ -39,8 +39,10 @@ export default {
           console.log(response)
           if (response.status === 200) {
             window.location = '/#/login'
-          } else {
-            alert('wrong credentials')
+          }
+        }).catch(function (error) {
+          if (error.response.status === 400) {
+            alert(error.response.data)
           }
         })
     }

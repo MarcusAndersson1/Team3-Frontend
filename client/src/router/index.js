@@ -7,7 +7,7 @@ import Test from '@/pages/Test.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -31,3 +31,15 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (window.location.hash !== '#/signup') {
+    if (document.cookie === null || document.cookie.split('=')[1] !== 'true') {
+      next()
+      window.location = '/#/login'
+    }
+  }
+  next()
+})
+
+export default router
