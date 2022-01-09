@@ -1,7 +1,7 @@
 <template>
 <div>
   <b-card
-    title="Dentist"
+    :title="clinic.clinic.name"
     img-src="https://picsum.photos/600/300/?image=25"
     img-alt="Image"
     img-top
@@ -10,10 +10,15 @@
     class="mb-2"
   >
     <b-card-text>
-      Opening hours:
-      Monday-Friday 09:00-17:00
-      Saturday      09:00-16:00
-      Sunday        Closed
+      <br>
+      <h5>Opening hours:</h5>
+      Monday:        {{clinic.clinic.openinghours.monday}}<br>
+      Tuesday:       {{clinic.clinic.openinghours.tuesday}}<br>
+      Wednesday:     {{clinic.clinic.openinghours.wednesday}}<br>
+      Thursday:      {{clinic.clinic.openinghours.thursday}}<br>
+      Friday:        {{clinic.clinic.openinghours.friday}}<br>
+      Saturday & Sunday: CLOSED<br><br>
+      Address:       {{clinic.clinic.address}}
     </b-card-text>
 
     <b-button href="#" variant="primary" v-on:click="dentist">Book a time</b-button>
@@ -35,7 +40,11 @@ export default ({
   },
   methods: {
     dentist() {
-      window.location = '/#/dentistpage'
+      let data = this.clinic
+      this.$router.push({
+        name: 'dentistpage', // use name for router push
+        params: { data }
+      })
     }
   }
 })

@@ -1,15 +1,18 @@
 <template>
   <div class>
+    <h1>{{clinic.clinic.name}}</h1>
+    <b-container class="bv-example-row">
     <div id = "listContainer">
     <br/>
-    <b-list-group v-for="slot in slots" v-bind:key="slot.name">
+    <b-col v-for="slot in clinic.timeslots" v-bind:key="slot.name" cols="12" sm="6" md="3">
       <time-slot id="list"
         v-on:expand-slot="expandSlot"
         v-bind:slot="slot"
         v-on:del-slot="deleteslot"
       />
-    </b-list-group>
+    </b-col>
     </div>
+    </b-container>
     <b-button v-on:click='testApi'>Test api connection</b-button>
   </div>
 </template>
@@ -31,10 +34,13 @@ export default {
     slots1.push(slot2)
     this.slots = slots1
     console.log('aaa')
+    this.clinic = this.$route.params.data
+    console.log('data is', this.clinic)
   },
   data() {
     return {
       slots: [],
+      clinic: {},
       msg: 'Welcome o Your Vue.js App'
     }
   },

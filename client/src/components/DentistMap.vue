@@ -1,9 +1,10 @@
 <template>
-  <div id="mapContainer" style="height: 1080px">
-    <l-map :zoom="zoom" :center="center" ref="map" id="map" style="width: 100%">
+  <div id="mapContainer" style="height: 1080px" >
+            <div class="col d-flex justify-content-left">
+          <dentist-card id="card" v-bind:clinic="selectedC" ></dentist-card>
+        </div>
+    <l-map :zoom="zoom" :center="center" ref="map" id="map" fluid-grow alt="Fluid-grow image">
       <l-marker :key="marker.data" v-for="marker in coordinates" :lat-lng="marker.location" @click="clickFunction(marker.data)">
-        <l-popup id="customPopup"><div class="col d-flex justify-content-center">
-    <dentist-card id="card" ></dentist-card></div></l-popup>
       </l-marker>
       <LTileLayer :url="url"></LTileLayer>
     </l-map>
@@ -68,6 +69,7 @@ export default{
     clickFunction(data) {
       this.showCard = !this.showCard
       this.selectedC = data
+      console.log(this.selectedC)
     }
 
   }
@@ -76,11 +78,6 @@ export default{
 </script>
 <style scoped>
 
-#customPopup, .leaflet-popup-tip-container {
-    width:100px;
-    height:15px;
-}
-
 #map{
     height: 100%;
     z-index: 8;
@@ -88,8 +85,9 @@ export default{
 #card{
   position: absolute;
   z-index: 9;
-  top: 40%;
-  align-items: center;
+  bottom: 0%;
+  margin-left: 1%;
+  align-items: left;
 
 }
 </style>

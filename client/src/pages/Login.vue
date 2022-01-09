@@ -62,7 +62,7 @@ export default {
   color: white;
 }
 #img {
-  width: 70%;
+  width: 30%;
 }
 #inputBar {
   margin-right: 10%;
