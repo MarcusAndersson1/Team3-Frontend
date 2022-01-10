@@ -49,9 +49,13 @@ export default {
         console.log(response)
       })
     },
-    bookTime(timeslotid) {
-      Api.patch('/timeslots', {clinic: this.clinic._id, timeslot: timeslotid}).then((response) => {
-        console.log(response)
+    bookTime(timeslotid, slot) {
+      Api.patch('/timeslots', {clinic: this.clinic._id, timeslot: timeslotid}).then((res) => {
+        if (res.data === 200) {
+          let index = this.clinic.timeslots.indexOf(slot)
+          this.clinic.timeslots[index].isAvailable = false
+          alert('Booking Confirmed')
+        } else { alert('ERROR CODE:' + res.data + ' Please try again later or contact support') }
       })
     }
   }
