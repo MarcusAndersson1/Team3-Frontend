@@ -2,7 +2,7 @@
 <div>
   <b-card
     :title="clinic.clinic.name"
-    img-src="https://picsum.photos/600/300/?image=25"
+    img-src="https://t4.ftcdn.net/jpg/03/02/68/11/360_F_302681154_9HOWdvGLtCKpfwO5B85yESszG7MfmlUl.jpg"
     img-alt="Image"
     img-top
     tag="article"

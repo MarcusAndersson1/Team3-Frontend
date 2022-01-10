@@ -1,10 +1,7 @@
 <template>
   <div>
     <br>
-    <br>
-    <br>
     <b-img id="img" :src="require('../assets/Oral Fixation.png')"></b-img>
-    <br><br>
     <br>
     <form id="inputBar">
       <b-form-input v-model="email" type="email" placeholder="Email address"/>
@@ -14,10 +11,9 @@
       <label></label>
       <br>
       <!-- <b-button id="btn" v-on:click="test" type="button" size="lg">Test</b-button> -->
-      <b-button id="btn" variant="outline-light" v-on:click="login" type="button" size="lg">Login</b-button>
+      <b-button id="btn" variant="primary" v-on:click="login" type="button" size="lg">Login</b-button>
       <br>
       <a href='/#/signup'>Sign up here!</a>
-
     </form>
   </div>
 </template>
@@ -71,7 +67,7 @@ export default {
 }
 #btn {
   width: 60%;
-  color: white;
+  color: rgb(255, 255, 255);
 
 }
 </style>
