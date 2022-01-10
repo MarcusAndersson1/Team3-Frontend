@@ -1,18 +1,23 @@
 <template>
   <div class>
     <h1>{{clinic.clinic.name}}</h1>
-    <b-container class="bv-example-row">
-    <div id = "listContainer">
+    <h3> Address: {{clinic.clinic.address}}</h3>
+    <h4> Monday: {{clinic.clinic.openinghours.monday}}</h4>
+    <h4> Tuesday: {{clinic.clinic.openinghours.tuesday}}</h4>
+    <h4> Wednesday: {{clinic.clinic.openinghours.wednesday}}</h4>
+    <h4> Thursday: {{clinic.clinic.openinghours.thursday}}</h4>
+    <h4> Friday: {{clinic.clinic.openinghours.friday}}</h4>
+    <h4>Saturday & Sunday: CLOSED</h4>
     <br/>
+    <b-row align-h="start">
     <b-col v-for="slot in clinic.timeslots" v-bind:key="slot.name" cols="12" sm="6" md="3">
       <time-slot id="list"
         v-bind:slot="slot"
         v-on:book-time="bookTime"
       />
     </b-col>
-    </div>
-    </b-container>
-    <b-button v-on:click='testApi'>Test api connection</b-button>
+    </b-row>
+    <b-col></b-col>
   </div>
 </template>
 
@@ -26,13 +31,8 @@ export default {
   name: 'dentistPage',
 
   mounted() {
-    let slot1 = { address: 'Långströmsgatan 2A', dentist: 'Pedro Borra', time: '11:27' }
-    let slot2 = { address: 'Åvägen 22', dentist: 'Micke Borra', time: '11:29' }
     let slots1 = []
-    slots1.push(slot1)
-    slots1.push(slot2)
     this.slots = slots1
-    console.log('aaa')
     this.clinic = this.$route.params.data
     console.log('data is', this.clinic)
   },
@@ -60,10 +60,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+h1 {text-align: center;
+    color: #000000;
+    }
+h3 {text-align: center;
+    color: #000000;
+    }
+h4 {text-align: center;
+    color: #000000;
+    }
 #list {
   display: inline-grid;
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 1%
 }
+
+body {
+  background-image: url('https://media.gq.com/photos/59270d4b7a71154410c462f3/');
+      background-size: 100% 100%;
+}
+
 </style>
