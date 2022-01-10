@@ -6,9 +6,8 @@
     <br/>
     <b-col v-for="slot in clinic.timeslots" v-bind:key="slot.name" cols="12" sm="6" md="3">
       <time-slot id="list"
-        v-on:expand-slot="expandSlot"
         v-bind:slot="slot"
-        v-on:del-slot="deleteslot"
+        v-on:book-time="bookTime"
       />
     </b-col>
     </div>
@@ -47,6 +46,11 @@ export default {
   methods: {
     testApi() {
       Api.post('/test', {}).then((response) => {
+        console.log(response)
+      })
+    },
+    bookTime(timeslotid) {
+      Api.patch('/timeslots', {clinic: this.clinic._id, timeslot: timeslotid}).then((response) => {
         console.log(response)
       })
     }
