@@ -2,6 +2,7 @@
   <div class>
     <h1>{{clinic.clinic.name}}</h1>
     <h3> Address: {{clinic.clinic.address}}</h3>
+    <h3> Opening Hours: </h3>
     <h4> Monday: {{clinic.clinic.openinghours.monday}}</h4>
     <h4> Tuesday: {{clinic.clinic.openinghours.tuesday}}</h4>
     <h4> Wednesday: {{clinic.clinic.openinghours.wednesday}}</h4>
@@ -18,7 +19,6 @@
       />
     </b-col>
     </b-row>
-    <b-col></b-col>
   </div>
 </template>
 
