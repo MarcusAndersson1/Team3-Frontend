@@ -1,9 +1,8 @@
 <template>
-  <b-list-group-item tabindex="0" @focus="handleFocus(slot._id)">
-    <p>{{ slot.dentist }}, {{ slot.address }}, {{ slot.time }}</p>
-    <b-button variant="danger" v-on:click="$emit('book-slot', slot._id)"
-      >BOKA</b-button
-    >
+  <b-list-group-item tabindex="0">
+    <p>{{ slot.dateTime }}</p>
+    <b-button variant="success" v-if="slot.isAvailable" v-on:click="$emit('book-time', slot._id, slot)">BOOK</b-button><b-button variant="success" v-if="slot.isAvaliable" v-on:click="$emit('book-time', slot._id, slot)">BOOK</b-button>
+    <b-button variant="secondary" v-if="!slot.isAvailable" disabled >TIME UNAVAILABLE</b-button>
   </b-list-group-item>
 </template>
 
@@ -12,12 +11,6 @@ export default {
   name: 'slot-item',
   props: ['slot'],
   methods: {
-    handleFocus(_id) {
-      this.$emit('expand-slot', _id)
-    },
-    handleFocusOut() {
-      // do something here
-    }
   }
 }
 </script>

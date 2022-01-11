@@ -1,20 +1,16 @@
 <template>
     <div>
     <br>
-    <br>
-    <br>
     <b-img id="img" :src="require('../assets/Oral Fixation.png')"></b-img>
-    <br><br>
     <br>
     <form id="inputBar">
       <b-form-input v-model="email" type="email" placeholder="Enter a valid email address"/>
-
       <br />
       <b-form-input v-model="password" type="password" placeholder="Enter password" />
       <br>
-      <b-button variant="outline-light" id="btn" v-on:click="signup" type="button" size="lg">signup</b-button>
-
+      <b-button variant="primary" id="btn" v-on:click="signup" type="button" size="lg">Sign Up</b-button>
     </form>
+    <br>
   </div>
 </template>
 
@@ -56,7 +52,7 @@ export default {
   color: white;
 }
 #img {
-  width: 70%;
+  width: 30%;
 }
 #inputBar {
   margin-right: 10%;

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import TimeView from '@/pages/TimeView.vue'
 import Login from '@/pages/Login.vue'
 import Signup from '@/pages/SignUp.vue'
+import DentistPage from '@/pages/DentistPage.vue'
 import Test from '@/pages/Test.vue'
 
 Vue.use(Router)
@@ -23,6 +24,11 @@ const router = new Router({
       path: '/signup',
       name: 'signup',
       component: Signup
+    },
+    {
+      path: '/dentistpage',
+      name: 'dentistpage',
+      component: DentistPage
     },
     {
       path: '/test',
